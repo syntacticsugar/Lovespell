@@ -9,7 +9,7 @@
 
 a = [ 10, 20, 300, 4000, 0, 0 ]
 
-a.map(&:to_s).map{ |string| string.split("").flatten }.flatten.map{ |digit| digit == "0" ? "1" : "0" }.map(&:to_i).inject(:+)
+a.map(&:to_s).map{ |string| string.split("")}.flatten.map{ |digit| digit == "0" ? "1" : "0" }.map(&:to_i).inject(:+)
 
 
 # after recovering from my initial manic euphoria,
@@ -20,10 +20,10 @@ a.map(&:to_s).map{ |string| string.split("").flatten }.flatten.map{ |digit| digi
 # I subsequently ran off to refactor:
 
 # w/ 'flat_map'
-a.flat_map{ |string| string.to_s.split("") }.map {|digit| digit == "0" ? "1" : "0" }.map(&:to_i).inject(:+)
+a.flat_map{ |digit| digit.to_s.split("") }.map {|string| string == "0" ? "1" : "0" }.map(&:to_i).inject(:+)
 
 # w/ 'count'
-a.flat_map{ |string| string.to_s.split("") }.map(&:to_i).count(0)
+a.flat_map{ |digit| digit.to_s.split("") }.count '0'
 
 # and lastly, the most terse way to go about it:
 a.map(&:to_s).join.count "0"

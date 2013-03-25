@@ -32,7 +32,7 @@ class MagicBeams
 		name = gets.chomp.capitalize
 		puts name + ", you say? Press \"Enter\" to confirm."
 		gets
-		puts @twolinebreaks * 2 + @laserbeams +@twolinebreaks * 2 + name + " has entered the wormhole, congratulations!  You\'ve successfully beamed #{name} over!" + @twolinebreaks * 2 + @fadinglaserbeams + @twolinebreaks * 3
+		puts @twolinebreaks * 2 + @laserbeams +@twolinebreaks * 2 + name + " has entered the wormhole, congratulations!  You've successfully beamed #{name} over!" + @twolinebreaks * 2 + @fadinglaserbeams + @twolinebreaks * 3
 	end
 
 	def teleport_plural
